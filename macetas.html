@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macetas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b3e5fc; /* Fondo celeste claro */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s ease; /* Transición suave */
+        }
+        .producto:hover {
+            transform: rotate(360deg); /* Rotar al pasar el mouse */
+        }
+        .carrito {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px dashed #004d40;
+            border-radius: 10px;
+            background-color: rgba(224, 247, 250, 0.9); /* Fondo semi-transparente */
+        }
+        .boton {
+            background-color: #8bc34a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .boton:hover {
+            background-color: #7cb342;
+        }
+        .formulario {
+            display: none; /* Oculto por defecto */
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #004d40;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .imagen-producto {
+            width: 100%; /* Ajustar la imagen al contenedor */
+            height: auto;
+        }
+        /* Colores específicos para cada tipo de maceta */
+        .ceramica { color: #d32f2f; }  /* Rojo */
+        .plastico { color: #4caf50; } /* Verde */
+        .metal { color: #8e24aa; } /* Morado */
+        .hormigon { color: #ff9800; } /* Naranja */
+        .colgante { color: #ff5722; } /* Naranja oscuro */
+        .decorativa { color: #f06292; } /* Rosa */
+        .rustica { color: #388e3c; } /* Verde oscuro */
+        .minimalista { color: #ffeb3b; } /* Amarillo */
+        .vintage { color: #e91e63; } /* Rosa claro */
+        .moderna { color: #673ab7; } /* Morado oscuro */
+    </style>
+</head>
+<body>
+
+    <h1>Macetas</h1>
+
+    <div class="producto ceramica">
+        <img src="images/4ceramica.jpg" alt="Maceta de Cerámica" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta de cerámica -->
+      <h2>Maceta de Cerámica</h2>
+        <p>Elegante y perfecta para interiores.</p>
+        <p>Precio: $15.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta de Cerámica', 15, 'https://example.com/maceta_ceramica.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto plastico">
+        <img src="images/4plastico.jpg" alt="Maceta de Plástico" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta de plástico -->
+      <h2>Maceta de Plástico</h2>
+        <p>Ligera y resistente, ideal para exteriores.</p>
+        <p>Precio: $10.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta de Plástico', 10, 'https://example.com/maceta_plastico.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto metal">
+        <img src="images/4metal.jpg" alt="Maceta de Metal" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta de metal -->
+      <h2>Maceta de Metal</h2>
+        <p>Moderna y resistente, ideal para decoraciones.</p>
+        <p>Precio: $20.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta de Metal', 20, 'https://example.com/maceta_metal.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto hormigon">
+        <img src="images/4hormigon.jpg" alt="Maceta de Hormigón" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta de hormigón -->
+      <h2>Maceta de Hormigón</h2>
+        <p>Robusta y perfecta para el exterior.</p>
+        <p>Precio: $30.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta de Hormigón', 30, 'https://example.com/maceta_hormigon.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto colgante">
+        <img src="images/4colgante.jpg" alt="Maceta Colgante" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta colgante -->
+      <h2>Maceta Colgante</h2>
+        <p>Ideal para plantas que cuelgan.</p>
+        <p>Precio: $12.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta Colgante', 12, 'https://example.com/maceta_colgante.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto decorativa">
+        <img src="images/4decorativa.jpg" alt="Maceta Decorativa" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta decorativa -->
+      <h2>Maceta Decorativa</h2>
+        <p>Perfecta para dar un toque especial a tu hogar.</p>
+        <p>Precio: $18.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta Decorativa', 18, 'https://example.com/maceta_decorativa.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto rustica">
+        <img src="images/4rustica.jpg" alt="Maceta Rústica" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta rústica -->
+      <h2>Maceta Rústica</h2>
+        <p>Para un estilo más natural y acogedor.</p>
+        <p>Precio: $14.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta Rústica', 14, 'https://example.com/maceta_rustica.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto minimalista">
+        <img src="images/4minimalista.jpg" alt="Maceta Minimalista" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta minimalista -->
+      <h2>Maceta Minimalista</h2>
+        <p>Diseño simple y elegante para cualquier espacio.</p>
+        <p>Precio: $16.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta Minimalista', 16, 'https://example.com/maceta_minimalista.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto vintage">
+        <img src="images/4vitage.jpg" alt="Maceta Vintage" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta vintage -->
+      <h2>Maceta Vintage</h2>
+        <p>Con un toque retro para tus plantas.</p>
+        <p>Precio: $22.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta Vintage', 22, 'https://example.com/maceta_vintage.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto moderna">
+        <img src="images/4moderna.jpg" alt="Maceta Moderna" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta moderna -->
+      <h2>Maceta Moderna</h2>
+        <p>Diseño contemporáneo para el hogar actual.</p>
+        <p>Precio: $25.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta Moderna', 25, 'https://example.com/maceta_moderna.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p id="total-carrito">Total: $0.00</p>
+        <button class="boton" onclick="comprar()">Comprar</button>
+    </div>
+
+    <div class="formulario" id="formulario">
+        <h2>Datos de Compra</h2>
+        <form onsubmit="return procesarCompra()">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" required><br>
+            <label for="direccion">Dirección:</label><br>
+            <input type="text" id="direccion" required><br>
+            <input type="submit" value="Confirmar Compra" class="boton">
+        </form>
+    </div>
+
+    <script>
+        let total = 0;
+
+        function agregarAlCarrito(producto, precio, imagen) {
+            const listaCarrito = document.getElementById('lista-carrito');
+            const item = document.createElement('li');
+            item.innerHTML = `<img src="${imagen}" alt="${producto}" class="imagen-producto" style="width: 50px; height: auto;"> ${producto} - $${precio.toFixed(2)}`;
+            listaCarrito.appendChild(item);
+
+            total += precio;
+            document.getElementById('total-carrito').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function comprar() {
+            if (total > 0) {
+                document.getElementById('formulario').style.display = 'block'; // Mostrar formulario
+            } else {
+                alert("Su carrito está vacío.");
+            }
+        }
+
+        function procesarCompra() {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const direccion = document.getElementById('direccion').value;
+
+            alert(`Gracias ${nombre} por su compra de $${total.toFixed(2)}!\nEnviaremos a: ${direccion}\nConfirmación enviada a: ${email}`);
+
+            // Reiniciar el carrito
+            document.getElementById('lista-carrito').innerHTML = '';
+            total = 0;
+            document.getElementById('total-carrito').textContent = `Total: $${total.toFixed(2)}`;
+            document.getElementById('formulario').style.display = 'none'; // Ocultar formulario
+            return false; // Evitar que el formulario se envíe
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos para la Naturaleza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b3e5fc; /* Fondo celeste claro */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s ease; /* Transición suave */
+        }
+        .producto:hover {
+            transform: rotate(360deg); /* Rotar al pasar el mouse */
+        }
+        .carrito {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px dashed #004d40;
+            border-radius: 10px;
+            background-color: rgba(224, 247, 250, 0.9); /* Fondo semi-transparente */
+        }
+        .boton {
+            background-color: #8bc34a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .boton:hover {
+            background-color: #7cb342;
+        }
+        .formulario {
+            display: none; /* Oculto por defecto */
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #004d40;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .imagen-producto {
+            width: 100%; /* Ajustar la imagen al contenedor */
+            height: auto;
+        }
+        /* Colores específicos para cada tipo de producto */
+        .semillas { color: #d32f2f; }  /* Rojo */
+        .fertilizante { color: #4caf50; } /* Verde */
+        .maceta { color: #8e24aa; } /* Morado */
+        .regadera { color: #ff9800; } /* Naranja */
+        .compost { color: #ff5722; } /* Naranja oscuro */
+        .libro { color: #f06292; } /* Rosa */
+        .red { color: #388e3c; } /* Verde oscuro */
+        .trampa { color: #ffeb3b; } /* Amarillo */
+        .sustrato { color: #e91e63; } /* Rosa claro */
+        .accesorios { color: #673ab7; } /* Morado oscuro */
+    </style>
+</head>
+<body>
+
+    <h1>Productos para la Naturaleza</h1>
+
+    <div class="producto semillas">
+        <img src="images/semillas2.jpg" alt="Semillas" class="imagen-producto"> <!-- Cambia la URL por la imagen de las semillas -->
+      <h2>Semillas</h2>
+        <p>Variedad de semillas para tu jardín.</p>
+        <p>Precio: $5.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Semillas', 5, 'https://example.com/semillas.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto fertilizante">
+        <img src="images/fertiizante2.jpg" alt="Fertilizante" class="imagen-producto"> <!-- Cambia la URL por la imagen del fertilizante -->
+      <h2>Fertilizante</h2>
+        <p>Nutre tus plantas y mejora el crecimiento.</p>
+        <p>Precio: $10.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Fertilizante', 10, 'https://example.com/fertilizante.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto maceta">
+        <img src="images/maceta2.jpg" alt="Maceta" class="imagen-producto"> <!-- Cambia la URL por la imagen de la maceta -->
+      <h2>Maceta</h2>
+        <p>Perfecta para cultivar tus plantas.</p>
+        <p>Precio: $15.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta', 15, 'https://example.com/maceta.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto regadera">
+        <img src="images/regadera2.jpg" alt="Regadera" class="imagen-producto"> <!-- Cambia la URL por la imagen de la regadera -->
+      <h2>Regadera</h2>
+        <p>Ideal para regar tus plantas con cuidado.</p>
+        <p>Precio: $12.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Regadera', 12, 'https://example.com/regadera.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto compost">
+        <img src="images/compost2.jpg" alt="Compost" class="imagen-producto"> <!-- Cambia la URL por la imagen del compost -->
+      <h2>Compost</h2>
+        <p>Mejorador del suelo hecho de materia orgánica.</p>
+        <p>Precio: $8.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Compost', 8, 'https://example.com/compost.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto libro">
+        <img src="images/libro2.jpg" alt="Libro de Jardinería" class="imagen-producto"> <!-- Cambia la URL por la imagen del libro -->
+      <h2>Libro de Jardinería</h2>
+        <p>Guía completa para cuidar tus plantas.</p>
+        <p>Precio: $18.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Libro de Jardinería', 18, 'https://example.com/libro.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto red">
+        <img src="images/red2.jpg" alt="Red para Plantas" class="imagen-producto"> <!-- Cambia la URL por la imagen de la red -->
+      <h2>Red para Plantas</h2>
+        <p>Soporte para tus plantas trepadoras.</p>
+        <p>Precio: $9.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Red para Plantas', 9, 'https://example.com/red.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto trampa">
+        <img src="images/insectos2.jpg" alt="Trampa de Insectos" class="imagen-producto"> <!-- Cambia la URL por la imagen de la trampa -->
+      <h2>Trampa de Insectos</h2>
+        <p>Protege tus plantas de plagas.</p>
+        <p>Precio: $15.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Trampa de Insectos', 15, 'https://example.com/trampa.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto sustrato">
+        <img src="images/sustrato2.jpg" alt="Sustrato" class="imagen-producto"> <!-- Cambia la URL por la imagen del sustrato -->
+      <h2>Sustrato</h2>
+        <p>Mejora el drenaje y la retención de nutrientes.</p>
+        <p>Precio: $7.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Sustrato', 7, 'https://example.com/sustrato.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto accesorios">
+        <img src="images/acsesorio.jpg" alt="Accesorios de Jardinería" class="imagen-producto"> <!-- Cambia la URL por la imagen de los accesorios -->
+      <h2>Accesorios de Jardinería</h2>
+        <p>Todo lo que necesitas para cuidar tu jardín.</p>
+        <p>Precio: $10.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Accesorios de Jardinería', 10, 'https://example.com/accesorios.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p id="total-carrito">Total: $0.00</p>
+        <button class="boton" onclick="comprar()">Comprar</button>
+    </div>
+
+    <div class="formulario" id="formulario">
+        <h2>Datos de Compra</h2>
+        <form onsubmit="return procesarCompra()">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" required><br>
+            <label for="direccion">Dirección:</label><br>
+            <input type="text" id="direccion" required><br>
+            <input type="submit" value="Confirmar Compra" class="boton">
+        </form>
+    </div>
+
+    <script>
+        let total = 0;
+
+        function agregarAlCarrito(producto, precio, imagen) {
+            const listaCarrito = document.getElementById('lista-carrito');
+            const item = document.createElement('li');
+            item.innerHTML = `<img src="${imagen}" alt="${producto}" class="imagen-producto" style="width: 50px; height: auto;"> ${producto} - $${precio.toFixed(2)}`;
+            listaCarrito.appendChild(item);
+
+            total += precio;
+            document.getElementById('total-carrito').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function comprar() {
+            if (total > 0) {
+                document.getElementById('formulario').style.display = 'block'; // Mostrar formulario
+            } else {
+                alert("Su carrito está vacío.");
+            }
+        }
+
+        function procesarCompra() {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const direccion = document.getElementById('direccion').value;
+
+            alert(`Gracias ${nombre} por su compra de $${total.toFixed(2)}!\nEnviaremos a: ${direccion}\nConfirmación enviada a: ${email}`);
+
+            // Reiniciar el carrito
+            document.getElementById('lista-carrito').innerHTML = '';
+            total = 0;
+            document.getElementById('total-carrito').textContent = `Total: $${total.toFixed(2)}`;
+            document.getElementById('formulario').style.display = 'none'; // Ocultar formulario
+            return false; // Evitar que el formulario se envíe
+        }
+    </script>
+</body>
+</html>

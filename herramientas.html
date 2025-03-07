@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas para la Naturaleza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b3e5fc; /* Fondo celeste claro */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s ease; /* Transición suave */
+        }
+        .producto:hover {
+            transform: rotate(360deg); /* Rotar al pasar el mouse */
+        }
+        .carrito {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px dashed #004d40;
+            border-radius: 10px;
+            background-color: rgba(224, 247, 250, 0.9); /* Fondo semi-transparente */
+        }
+        .boton {
+            background-color: #8bc34a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .boton:hover {
+            background-color: #7cb342;
+        }
+        .formulario {
+            display: none; /* Oculto por defecto */
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #004d40;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .imagen-producto {
+            width: 100%; /* Ajustar la imagen al contenedor */
+            height: auto;
+        }
+        /* Colores específicos para cada tipo de herramienta */
+        .pala { color: #d32f2f; }  /* Rojo */
+        .rastrillo { color: #4caf50; } /* Verde */
+        .tijeras { color: #8e24aa; } /* Morado */
+        .guantes { color: #ff9800; } /* Naranja */
+        .manguera { color: #ff5722; } /* Naranja oscuro */
+        .carretilla { color: #f06292; } /* Rosa */
+        .azadon { color: #388e3c; } /* Verde oscuro */
+        .sierra { color: #ffeb3b; } /* Amarillo */
+        .pico { color: #e91e63; } /* Rosa claro */
+        .corta_setos { color: #673ab7; } /* Morado oscuro */
+    </style>
+</head>
+<body>
+
+    <h1>Herramientas para la Naturaleza</h1>
+
+    <div class="producto pala">
+        <img src="images/2pala.png" alt="Pala" class="imagen-producto"> <!-- Cambia la URL por la imagen de la pala -->
+      <h2>Pala</h2>
+        <p>Ideal para cavar y mover tierra en el jardín.</p>
+        <p>Precio: $15.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Pala', 15, 'https://example.com/pala.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto rastrillo">
+        <img src="images/2rastrillo.jpg" alt="Rastrillo" class="imagen-producto"> <!-- Cambia la URL por la imagen del rastrillo -->
+      <h2>Rastrillo</h2>
+        <p>Perfecto para nivelar el suelo y recoger hojas.</p>
+        <p>Precio: $10.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Rastrillo', 10, 'https://example.com/rastrillo.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto tijeras">
+        <img src="images/2rijeras.jpg" alt="Tijeras de Podar" class="imagen-producto"> <!-- Cambia la URL por la imagen de las tijeras -->
+      <h2>Tijeras de Podar</h2>
+        <p>Para un corte preciso en tus plantas y arbustos.</p>
+        <p>Precio: $12.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Tijeras de Podar', 12, 'https://example.com/tijeras.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto guantes">
+        <img src="images/2guantes.jpg" alt="Guantes de Jardinería" class="imagen-producto"> <!-- Cambia la URL por la imagen de los guantes -->
+      <h2>Guantes de Jardinería</h2>
+        <p>Protege tus manos mientras trabajas en la naturaleza.</p>
+        <p>Precio: $8.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Guantes de Jardinería', 8, 'https://example.com/guantes.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto manguera">
+        <img src="images/2manguera.jpg" alt="Manguera" class="imagen-producto"> <!-- Cambia la URL por la imagen de la manguera -->
+      <h2>Manguera</h2>
+        <p>Ideal para regar tus plantas y mantener el jardín.</p>
+        <p>Precio: $20.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Manguera', 20, 'https://example.com/manguera.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto carretilla">
+        <img src="images/2carretilla.jpg" alt="Carretilla" class="imagen-producto"> <!-- Cambia la URL por la imagen de la carretilla -->
+      <h2>Carretilla</h2>
+        <p>Perfecta para transportar tierra, plantas y herramientas.</p>
+        <p>Precio: $50.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Carretilla', 50, 'https://example.com/carretilla.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto azadon">
+        <img src="images/2azadon.jpg" alt="Azadón" class="imagen-producto"> <!-- Cambia la URL por la imagen del azadón -->
+      <h2>Azadón</h2>
+        <p>Ideal para preparar el terreno y plantar.</p>
+        <p>Precio: $18.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Azadón', 18, 'https://example.com/azadon.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto sierra">
+        <img src="images/2sierra.jpg" alt="Sierra" class="imagen-producto"> <!-- Cambia la URL por la imagen de la sierra -->
+      <h2>Sierra</h2>
+        <p>Para cortar ramas y troncos con facilidad.</p>
+        <p>Precio: $25.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Sierra', 25, 'https://example.com/sierra.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto pico">
+        <img src="images/2pico.jpg" alt="Pico" class="imagen-producto"> <!-- Cambia la URL por la imagen del pico -->
+      <h2>Pico</h2>
+        <p>Herramienta esencial para romper terreno duro.</p>
+        <p>Precio: $22.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Pico', 22, 'https://example.com/pico.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto corta_setos">
+        <img src="images/2corta.jpg" alt="Corta Setos" class="imagen-producto"> <!-- Cambia la URL por la imagen del corta setos -->
+      <h2>Corta Setos</h2>
+        <p>Para mantener tus setos y arbustos con buen aspecto.</p>
+        <p>Precio: $30.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Corta Setos', 30, 'https://example.com/corta_setos.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p id="total-carrito">Total: $0.00</p>
+        <button class="boton" onclick="comprar()">Comprar</button>
+    </div>
+
+    <div class="formulario" id="formulario">
+        <h2>Datos de Compra</h2>
+        <form onsubmit="return procesarCompra()">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" required><br>
+            <label for="direccion">Dirección:</label><br>
+            <input type="text" id="direccion" required><br>
+            <input type="submit" value="Confirmar Compra" class="boton">
+        </form>
+    </div>
+
+    <script>
+        let total = 0;
+
+        function agregarAlCarrito(producto, precio, imagen) {
+            const listaCarrito = document.getElementById('lista-carrito');
+            const item = document.createElement('li');
+            item.innerHTML = `<img src="${imagen}" alt="${producto}" class="imagen-producto" style="width: 50px; height: auto;"> ${producto} - $${precio.toFixed(2)}`;
+            listaCarrito.appendChild(item);
+
+            total += precio;
+            document.getElementById('total-carrito').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function comprar() {
+            if (total > 0) {
+                document.getElementById('formulario').style.display = 'block'; // Mostrar formulario
+            } else {
+                alert("Su carrito está vacío.");
+            }
+        }
+
+        function procesarCompra() {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const direccion = document.getElementById('direccion').value;
+
+            alert(`Gracias ${nombre} por su compra de $${total.toFixed(2)}!\nEnviaremos a: ${direccion}\nConfirmación enviada a: ${email}`);
+
+            // Reiniciar el carrito
+            document.getElementById('lista-carrito').innerHTML = '';
+            total = 0;
+            document.getElementById('total-carrito').textContent = `Total: $${total.toFixed(2)}`;
+            document.getElementById('formulario').style.display = 'none'; // Ocultar formulario
+            return false; // Evitar que el formulario se envíe
+        }
+    </script>
+</body>
+</html>

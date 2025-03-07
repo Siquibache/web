@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior y Exterior</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b3e5fc; /* Fondo celeste claro */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s ease; /* Transición suave */
+        }
+        .producto:hover {
+            transform: rotate(360deg); /* Rotar al pasar el mouse */
+        }
+        .carrito {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px dashed #004d40;
+            border-radius: 10px;
+            background-color: rgba(224, 247, 250, 0.9); /* Fondo semi-transparente */
+        }
+        .boton {
+            background-color: #8bc34a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .boton:hover {
+            background-color: #7cb342;
+        }
+        .formulario {
+            display: none; /* Oculto por defecto */
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #004d40;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .imagen-producto {
+            width: 100%; /* Ajustar la imagen al contenedor */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interior y Exterior</h1>
+
+    <div class="producto">
+        <img src="images/ceramica.jpg" alt="Maceta de Cerámica" class="imagen-producto">
+        <h2>Maceta de Cerámica</h2>
+        <p>Ideal para plantas de interior.</p>
+        <p>Precio: $15.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta de Cerámica', 15, 'https://example.com/maceta.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/universal.jpg" alt="Sustrato Universal" class="imagen-producto">
+        <h2>Sustrato Universal</h2>
+        <p>Adecuado para todo tipo de plantas.</p>
+        <p>Precio: $10.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Sustrato Universal', 10, 'https://example.com/sustrato.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/fertalizante.jpg" alt="Fertilizante Orgánico" class="imagen-producto">
+        <h2>Fertilizante Orgánico</h2>
+        <p>Para un crecimiento saludable de tus plantas.</p>
+        <p>Precio: $12.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Fertilizante Orgánico', 12, 'https://example.com/fertilizante.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/guantes.jpg" alt="Guantes de Jardinería" class="imagen-producto">
+        <h2>Guantes de Jardinería</h2>
+        <p>Protege tus manos mientras trabajas.</p>
+        <p>Precio: $8.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Guantes de Jardinería', 8, 'https://example.com/guantes.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/palas.jpg" alt="Pala de Jardín" class="imagen-producto">
+        <h2>Pala de Jardín</h2>
+        <p>Perfecta para plantar y trasplantar.</p>
+        <p>Precio: $20.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Pala de Jardín', 20, 'https://example.com/pala.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/podar.jpg" alt="Tijeras de Podar" class="imagen-producto">
+        <h2>Tijeras de Podar</h2>
+        <p>Para un corte preciso en tus plantas.</p>
+        <p>Precio: $15.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Tijeras de Podar', 15, 'https://example.com/tijeras.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/regadera.jpg" alt="Regadera" class="imagen-producto">
+        <h2>Regadera</h2>
+        <p>Ideal para regar tus plantas de interior y exterior.</p>
+        <p>Precio: $18.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Regadera', 18, 'https://example.com/regar.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/exteriror.jpg" alt="Maceta Exterior" class="imagen-producto">
+        <h2>Maceta Exterior</h2>
+        <p>Resistente a la intemperie.</p>
+        <p>Precio: $25.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Maceta Exterior', 25, 'https://example.com/maceta_exterior.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/suculentas.jpg" alt="Plantas Suculentas" class="imagen-producto">
+        <h2>Plantas Suculentas</h2>
+        <p>Fáciles de cuidar y perfectas para interiores.</p>
+        <p>Precio: $30.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Plantas Suculentas', 30, 'https://example.com/plantas.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <!-- Productos adicionales -->
+    <div class="producto">
+        <img src="images/semilla flores.jpg" alt="Semillas de Flores" class="imagen-producto">
+        <h2>Semillas de Flores</h2>
+        <p>Embellece tu jardín con colores vibrantes.</p>
+        <p>Precio: $4.50</p>
+        <button class="boton" onclick="agregarAlCarrito('Semillas de Flores', 4.5, 'https://example.com/semillas.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/abono.jpg" alt="Abono Natural" class="imagen-producto">
+        <h2>Abono Natural</h2>
+        <p>Mejora la calidad de tu suelo.</p>
+        <p>Precio: $9.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Abono Natural', 9, 'https://example.com/abono.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/jardin.jpg" alt="Sierra de Jardín" class="imagen-producto">
+        <h2>Sierra de Jardín</h2>
+        <p>Para cortar ramas más gruesas.</p>
+        <p>Precio: $22.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Sierra de Jardín', 22, 'https://example.com/sierra.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/rastrillo.jpg" alt="Rastrillo" class="imagen-producto">
+        <h2>Rastrillo</h2>
+        <p>Mejor para preparar el suelo.</p>
+        <p>Precio: $15.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Rastrillo', 15, 'https://example.com/rastrillo.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/manguera.jpg" alt="Manguera de Jardín" class="imagen-producto">
+        <h2>Manguera de Jardín</h2>
+        <p>Perfecta para regar grandes áreas.</p>
+        <p>Precio: $35.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Manguera de Jardín', 35, 'https://example.com/manguera.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/hortalizas.jpg" alt="Semillas de Hortalizas" class="imagen-producto">
+        <h2>Semillas de Hortalizas</h2>
+        <p>Ideal para tu huerto en casa.</p>
+        <p>Precio: $5.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Semillas de Hortalizas', 5, 'https://example.com/semillas_hortalizas.jpg')">Agregar al Carrito</button>
+
+    </div>
+
+    <div class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p id="total-carrito">Total: $0.00</p>
+        <button class="boton" onclick="comprar()">Comprar</button>
+    </div>
+
+    <div class="formulario" id="formulario">
+        <h2>Datos de Compra</h2>
+        <form onsubmit="return procesarCompra()">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" required><br>
+            <label for="direccion">Dirección:</label><br>
+            <input type="text" id="direccion" required><br>
+            <input type="submit" value="Confirmar Compra" class="boton">
+        </form>
+    </div>
+
+    <script>
+        let total = 0;
+
+        function agregarAlCarrito(producto, precio, imagen) {
+            const listaCarrito = document.getElementById('lista-carrito');
+            const item = document.createElement('li');
+            item.innerHTML = `<img src="${imagen}" alt="${producto}" class="imagen-producto" style="width: 50px; height: auto;"> ${producto} - $${precio.toFixed(2)}`;
+            listaCarrito.appendChild(item);
+
+            total += precio;
+            document.getElementById('total-carrito').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function comprar() {
+            if (total > 0) {
+                document.getElementById('formulario').style.display = 'block'; // Mostrar formulario
+            } else {
+                alert("Su carrito está vacío.");
+            }
+        }
+
+        function procesarCompra() {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const direccion = document.getElementById('direccion').value;
+
+            alert(`Gracias ${nombre} por su compra de $${total.toFixed(2)}!\nEnviaremos a: ${direccion}\nConfirmación enviada a: ${email}`);
+
+            // Reiniciar el carrito
+            document.getElementById('lista-carrito').innerHTML = '';
+
+            total = 0;
+            document.getElementById('total-carrito').textContent = `Total: $${total.toFixed(2)}`;
+            document.getElementById('formulario').style.display = 'none'; // Ocultar formulario
+            return false; // Evitar que el formulario se envíe
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Visitas - Naturaleza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #004d40;
+            text-align: center;
+            padding: 50px;
+        }
+        .contador-container {
+            background: linear-gradient(to bottom right, #8bc34a, #cddc39);
+            border-radius: 15px;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        #contador {
+            font-size: 1.5em; /* Tamaño de fuente aumentado */
+            font-weight: bold;
+            margin: 5px; /* Margen reducido */
+            color: #fff;
+        }
+        .arbol {
+            font-size: 0.8em; /* Tamaño del ícono de árbol mucho más pequeño */
+            margin: 0 5px; /* Margen a los lados */
+        }
+        .flor {
+            font-size: 0.7em; /* Tamaño de la flor mucho más pequeña */
+            margin: 0 5px; /* Margen a los lados */
+        }
+        .linea {
+            display: flex; /* Usar flexbox para alinear en una fila */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: flex-end; /* Alinear en la parte inferior */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contador-container">
+        <div class="linea">
+            <div class="arbol">🌳</div>
+            <div class="flor">🌼</div> <!-- Flor en medio de los árboles -->
+            <div class="arbol">🌳</div> <!-- Segundo árbol -->
+        </div>
+        <p>Visitas a la Página:</p>
+    <span id="contador">0</span></div>
+    <p><a href="arboles.html" target="mainFrame">Arboles</a></p>
+    <p><a href="interior.html" target="mainFrame">Interior</a></p>
+    <p><a href="semillas.html" target="mainFrame">Semillas</a></p>
+    <p><a href="macetas.html" target="mainFrame">Macetas</a></p>
+    <p><a href="herramientas.html" target="mainFrame">Herramientas</a></p>
+    <p><a href="productos.html" target="mainFrame">Productos</a></p>
+    <p><a href="info.html" target="mainFrame">Inicio</a></p>
+    
+    <script>
+        // Función para actualizar el contador de visitas
+        function updateVisitCount() {
+            // Obtener el número de visitas del almacenamiento local
+            let visitCount = localStorage.getItem('visitCount');
+
+            // Si no hay visitas, inicializar en 0
+            if (visitCount === null) {
+                visitCount = 0;
+            } else {
+                // Convertir a número antes de incrementar
+                visitCount = parseInt(visitCount);
+            }
+
+            // Incrementar el contador
+            visitCount++;
+
+            // Almacenar el nuevo valor en el almacenamiento local
+            localStorage.setItem('visitCount', visitCount);
+
+            // Mostrar el contador en la página
+            document.getElementById('contador').textContent = visitCount;
+        }
+
+        // Llamar a la función al cargar la página
+        window.onload = updateVisitCount;
+    </script>
+</body>
+</html>

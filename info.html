@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árboles</title>
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+    body {
+	background-color: #3F9;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Naturaleza</h1>
+        <nav>
+            <a href="https://www.instagram.com/farmacia_elmundo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" onclick="showBirds()"><img src="images/1tik.png" alt="WhatsApp"></a>
+            <a href="https://wa.me/qr/M2NINE2OM6AUA1" target="_blank" onclick="showBirds()"><img src="images/1what.jpg" alt="Facebook"></a>
+        <a href="https://www.tiktok.com/@farmacia_el_mundo?_t=ZM-8uHZuQTYbEE&_r=1" target="_blank" onclick="showBirds()"><img src="images/1tok.png" alt="Instagram"></a>          <a href="https://www.facebook.com/share/15sTBRN1kT/" target="_blank"><img src="images/1face.png" alt="TikTok"></a> </nav>
+    </header>
+
+    <main>
+        <section id="informacion">
+            <h2>Información del Lugar</h2>
+            <p>Bienvenido a nuestro rincón de la naturaleza, un lugar  lleno de vida y belleza. Aquí podrás disfrutar de la flora y fauna que nos rodea, además de aprender sobre la importancia de preservar nuestro medio ambiente.</p>
+            <img src="images/01.jpg" alt="Naturaleza Ficticia" width="354" class="imagen-lugar"><img src="images/00.jpg" width="351" height="183">
+            <p>En este lugar, encontrarás una diversidad de árboles, flores y aves que hacen de este un paraíso natural. La conexión con la naturaleza es esencial para nuestro bienestar, así que ven y disfruta de este hermoso entorno.</p>
+        </section>
+
+        <section id="ubicacion">
+            <h2>Ubicación</h2>
+            <p>Nuestra ubicación  se encuentra en el corazón de Villa Nueva, Guatemala, un lugar vibrante y lleno de vida. Puedes imaginártelo en:</p>
+            <p><strong>Dirección: Calle de la Naturaleza, Villa Nueva, Guatemala</strong></p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.2483058238107!2d-90.59523868595029!3d14.550872579828859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858f8a4b024f447d%3A0x50d4f7b5b63b7a5d!2sVilla%20Nueva%2C%20Guatemala!5e0!3m2!1ses!2sus!4v1617810208509!5m2!1ses!2sus" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <section id="buzon-quejas">
+            <h2>Buzón de Quejas</h2>
+            <form id="quejas-form" onsubmit="submitQueja(event)">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+                <label for="queja">Queja:</label>
+                <textarea id="queja" required></textarea>
+                <button type="submit">Enviar Queja</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Naturaleza </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

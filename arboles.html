@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árboles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b3e5fc; /* Fondo celeste claro */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s ease; /* Transición suave */
+        }
+        .producto:hover {
+            transform: rotate(360deg); /* Rotar al pasar el mouse */
+        }
+        .carrito {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px dashed #004d40;
+            border-radius: 10px;
+            background-color: rgba(224, 247, 250, 0.9); /* Fondo semi-transparente */
+        }
+        .boton {
+            background-color: #8bc34a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .boton:hover {
+            background-color: #7cb342;
+        }
+        .formulario {
+            display: none; /* Oculto por defecto */
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #004d40;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .imagen-arbol {
+            width: 100%; /* Ajustar la imagen al contenedor */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Árboles</h1>
+
+    <div class="producto manzano">
+        <img src="images/manzano.jpg" alt="Árbol de Manzano" class="imagen-arbol">
+        <h2>Árbol de Manzano</h2>
+        <p>Un hermoso árbol que produce manzanas deliciosas.</p>
+        <p>Precio: $30.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Manzano', 30, 'https://example.com/manzano.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto naranjo">
+        <img src="images/naranja.jpg" alt="Árbol de Naranja" class="imagen-arbol">
+        <h2>Árbol de Naranja</h2>
+        <p>Proporciona naranjas jugosas y frescas.</p>
+        <p>Precio: $35.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Naranja', 35, 'https://example.com/naranja.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto cereza">
+        <img src="images/cereza.jpg" alt="Árbol de Cereza" class="imagen-arbol">
+        <h2>Árbol de Cereza</h2>
+        <p>Un árbol ornamental con flores hermosas y cerezas deliciosas.</p>
+        <p>Precio: $25.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Cereza', 25, 'https://example.com/cereza.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto pino">
+        <img src="images/pino.jpg" alt="Árbol de Pino" class="imagen-arbol">
+        <h2>Árbol de Pino</h2>
+        <p>Ideal para paisajismo, con un aroma fresco y duradero.</p>
+        <p>Precio: $40.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Pino', 40, 'https://example.com/pino.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto roble">
+        <img src="images/roble.jpg" alt="Árbol de Roble" class="imagen-arbol">
+        <h2>Árbol de Roble</h2>
+        <p>Un símbolo de fuerza, ideal para grandes jardines.</p>
+        <p>Precio: $50.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Roble', 50, 'https://example.com/roble.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto sauce">
+        <img src="images/sauce.jpg" alt="Árbol de Sauce" class="imagen-arbol">
+        <h2>Árbol de Sauce</h2>
+        <p>Conocido por sus ramas largas y colgantes.</p>
+        <p>Precio: $45.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Sauce', 45, 'https://example.com/sauce.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto olivo">
+        <img src="images/olivo.jpg" alt="Árbol de Olivo" class="imagen-arbol">
+        <h2>Árbol de Olivo</h2>
+        <p>Un árbol mediterráneo que produce aceitunas.</p>
+        <p>Precio: $60.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Olivo', 60, 'https://example.com/olivo.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto palmera">
+        <img src="images/palmera.jpg" alt="Árbol de Palmera" class="imagen-arbol">
+        <h2>Árbol de Palmera</h2>
+        <p>Perfecto para climas cálidos, brinda un toque tropical.</p>
+        <p>Precio: $55.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Palmera', 55, 'https://example.com/palmera.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto jacaranda">
+        <img src="images/jacaranda.jpg" alt="Árbol de Jacarandá" class="imagen-arbol">
+        <h2>Árbol de Jacarandá</h2>
+        <p>Famoso por sus flores moradas en primavera.</p>
+        <p>Precio: $70.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Jacarandá', 70, 'https://example.com/jacaranda.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto magnolia">
+        <img src="images/magnolia.jpg" alt="Árbol de Magnolia" class="imagen-arbol">
+        <h2>Árbol de Magnolia</h2>
+        <p>Conocido por sus grandes flores fragantes.</p>
+        <p>Precio: $65.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Magnolia', 65, 'https://example.com/magnolia.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <!-- Productos adicionales -->
+    <div class="producto">
+        <img src="images/abeto.jpg" alt="Árbol de Abeto" class="imagen-arbol">
+        <h2>Árbol de Abeto</h2>
+        <p>Perfecto para decoraciones navideñas.</p>
+        <p>Precio: $50.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Abeto', 50, 'https://example.com/abeto.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/cipres.jpg" alt="Árbol de Ciprés" class="imagen-arbol">
+        <h2>Árbol de Ciprés</h2>
+        <p>Ideal para crear pantalla visual en jardines.</p>
+        <p>Precio: $40.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Ciprés', 40, 'https://example.com/cipres.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/tejo.jpg" alt="Árbol de Tejo" class="imagen-arbol">
+        <h2>Árbol de Tejo</h2>
+        <p>Un árbol de hoja perenne que puede vivir siglos.</p>
+        <p>Precio: $75.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Tejo', 75, 'https://example.com/tejo.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/almendras.jpg" alt="Árbol de Almendro" class="imagen-arbol">
+        <h2>Árbol de Almendro</h2>
+        <p>Proporciona flores hermosas y almendras deliciosas.</p>
+        <p>Precio: $80.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Almendro', 80, 'https://example.com/almendro.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="producto">
+        <img src="images/serbal.jpg" alt="Árbol de Serbal" class="imagen-arbol">
+        <h2>Árbol de Serbal</h2>
+        <p>Conocido por sus bayas rojas y atractivo visual.</p>
+        <p>Precio: $55.00</p>
+        <button class="boton" onclick="agregarAlCarrito('Árbol de Serbal', 55, 'https://example.com/serbal.jpg')">Agregar al Carrito</button>
+    </div>
+
+    <div class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p id="total-carrito">Total: $0.00</p>
+        <button class="boton" onclick="comprar()">Comprar</button>
+    </div>
+
+    <div class="formulario" id="formulario">
+        <h2>Datos de Compra</h2>
+        <form onsubmit="return procesarCompra()">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" required><br>
+            <label for="direccion">Dirección:</label><br>
+            <input type="text" id="direccion" required><br>
+            <input type="submit" value="Confirmar Compra" class="boton">
+        </form>
+    </div>
+
+    <script>
+        let total = 0;
+
+        function agregarAlCarrito(producto, precio, imagen) {
+            const listaCarrito = document.getElementById('lista-carrito');
+            const item = document.createElement('li');
+            item.innerHTML = `<img src="${imagen}" alt="${producto}" class="imagen-arbol" style="width: 50px; height: auto;"> ${producto} - $${precio.toFixed(2)}`;
+            listaCarrito.appendChild(item);
+
+            total += precio;
+            document.getElementById('total-carrito').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function comprar() {
+            if (total > 0) {
+                document.getElementById('formulario').style.display = 'block'; // Mostrar formulario
+            } else {
+                alert("Su carrito está vacío.");
+            }
+        }
+
+        function procesarCompra() {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const direccion = document.getElementById('direccion').value;
+
+            alert(`Gracias ${nombre} por su compra de $${total.toFixed(2)}!\nEnviaremos a: ${direccion}\nConfirmación enviada a: ${email}`);
+
+            // Reiniciar el carrito
+            document.getElementById('lista-carrito').innerHTML = '';
+            total = 0;
+            document.getElementById('total-carrito').textContent = `Total: $${total.toFixed(2)}`;
+            document.getElementById('formulario').style.display = 'none'; // Ocultar formulario
+            return false; // Evitar que el formulario se envíe
+        }
+    </script>
+</body>
+</html>
